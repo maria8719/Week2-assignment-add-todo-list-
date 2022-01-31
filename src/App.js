@@ -6,6 +6,7 @@ import { v4 as uuidv4} from "uuid";
 
 
 function App() {
+  
   const [todos, setTodos] = useState([
     {
       id: uuidv4(),
@@ -26,7 +27,9 @@ function App() {
 
   const addTodo = (text) => {
     // make a copy of todos object and add a new object (id, text, and isCompleted)
+    const newTodos = [...todos, {id: uuidv4(),text:text,isCompleted:false}]
     // update the todos array with the setTodos function
+    setTodos(newTodos);
   };
 
   // Week 3 assignment (you can work on it now if you want):
@@ -44,7 +47,9 @@ function App() {
   };
 
   return (
+    
     <div className="app">
+      
       <div className="todo-list">
         <h1 className="title">Todo App</h1>
         {todos.map((todo) => (

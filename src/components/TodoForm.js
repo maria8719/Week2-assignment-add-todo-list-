@@ -5,9 +5,11 @@ function TodoForm({ addTodo }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // if (!value) return;
+    if (!value) return;
     // execute the addTodo function passed as a prop
+    addTodo(value);
     // clear out the input
+    setValue("");
   };
 
   return (
